@@ -21,6 +21,15 @@ glimpse(county)
 The percent of units that are in multi-unit structures vs. homeownership within US counties.
 ```{r plot-multiunit-homeownership}
 ggplot(data = county) +
-  geom_point(aes(x = multi_unit, y = homeownership)) + 
-  labs(x = 'Percent of Units in Multi−Unit Structures', y = 'Homeownership Rate')
+  geom_point(aes(x = multi_unit, y = homeownership), shape = 'bullet') + 
+  scale_x_continuous(labels = scales::percent_format(scale = 1)) +
+  scale_y_continuous(labels = scales::percent_format(scale = 1)) + 
+  labs(x = 'Units in Multi−Unit Structures', y = 'Homeownership Rate')
+```
+
+```{r plot-median_income-pop_change}
+ggplot(data = county) +
+  geom_point(aes(x = median_hh_income, y = pop_change), shape='bullet') + 
+  scale_y_continuous(labels = scales::percent_format(scale = 1)) + 
+  labs(x = 'Median Household Income', y = 'Population Change over 7 Years')
 ```
