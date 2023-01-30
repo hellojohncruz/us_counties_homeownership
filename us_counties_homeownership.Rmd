@@ -1,0 +1,26 @@
+---
+title: "county"
+author: "John Cruz"
+date: "2023-01-30"
+output: html_document
+---
+
+```{r setup, include=FALSE, echo=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(labelled)
+library(openintro)
+```
+
+```{r load-data-openintro}
+# library(MASS)
+# data()
+glimpse(county)
+```
+
+The percent of units that are in multi-unit structures vs. homeownership within US counties.
+```{r plot-multiunit-homeownership}
+ggplot(data = county) +
+  geom_point(aes(x = multi_unit, y = homeownership)) + 
+  labs(x = 'Percent of Units in Multi−Unit Structures', y = 'Homeownership Rate')
+```
