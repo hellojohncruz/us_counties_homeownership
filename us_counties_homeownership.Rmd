@@ -1,5 +1,5 @@
 ---
-title: "county"
+title: "US Counties and Homeownership"
 author: "John Cruz"
 date: "2023-01-30"
 output: html_document
@@ -29,7 +29,7 @@ ggplot(data = county) +
 
 ```{r plot-median_income-pop_change}
 ggplot(data = county) +
-  geom_point(aes(x = median_hh_income, y = pop_change), shape='bullet') + 
+  geom_point(aes(x = median_hh_income, y = pop_change), shape=21, , colour = 'darkslategray3', fill = 'black', size = 2) + 
   scale_x_continuous(labels = scales::dollar, expand = c(0,0), limits = c(0, NA)) + 
   scale_y_continuous(labels = scales::percent_format(scale = 1)) + 
   labs(x = 'Median Household Income', y = 'Population Change over 7 Years')
